@@ -7,11 +7,14 @@
   <title>Fei Chiang, Mcmaster University</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Include Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin-top: 100px;
       /* increased margin to fit larger navbar */
+      font-size: 110%;
     }
 
     .navbar {
@@ -19,7 +22,7 @@
       width: 100%;
       top: 0;
       z-index: 1000;
-      background-color: #FFFFFF;
+      background-color: #000080;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       padding: 20px;
       /* increased padding to enlarge navbar */
@@ -64,9 +67,9 @@
     }
 
     a {
-      color: inherit;
+      color: cornflowerblue;
       /* Keeps the text color as inherited from the surrounding elements */
-      text-decoration: underline;
+      text-decoration: none;
       /* Shows underline by default */
     }
 
@@ -81,20 +84,60 @@
       color: #FFFFFF !important;
       font-weight: bold;
     }
+
+    .section-title {
+      text-align: center;
+      background-color: #000080;
+      color: white;
+      font-weight: bold;
+      padding: 10px 0;
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+
+    .project-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .project-item img.icon {
+      max-width: 150px;
+      /* Adjust size as needed */
+      height: auto;
+      margin-right: 15px;
+      float: left;
+    }
+
+    .project-item .content {
+      overflow: hidden;
+    }
+
+    .project-item .content h4 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .project-item .content p {
+      margin: 0;
+      font-size: 16px;
+      color: #666;
+      text-align: justify;
+    }
   </style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7A003C;">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <div class="left-items" > <!-- 增加 margin-left -->
-        <!-- <div class="col-md-4"> -->
-        <!-- <div class="text-center"> -->
+      <div class="left-items">
         <a class="navbar-brand" href="#">Fei Chiang</a>
       </div>
       <div class="right-items">
-        <!-- <div class="col-md-8"> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -119,6 +162,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#service">Service</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news">Media</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -134,23 +180,26 @@
             <img src="fei2019a.jpeg" alt="Fei Chiang" class="img-fluid" style="max-width: 250px;">
             <h2>Fei Chiang</h2>
             <h5>Associate Professor</h5>
-            <h6>
-              Department of Computing and Software
-            </h6>
-            <h6>
-              McMaster University
-            </h6>
-            Email: fchiang@mcmaster.ca
-            </h6>
+            <h5>Associate Chair, Research</h5>
+            <h5>Department of Computing and Software</h5>
+            <div class="contact-info text-left mt-3">
+
+              <i class="bi-geo-alt"></i> ITB 122, McMaster University, Hamilton, ON, CA
+              <p><i class="bi-telephone"></i> 905-525-9140</p>
+              <p><i class="bi-envelope"></i> <a href="mailto:fchiang@mcmaster.ca">fchiang@mcmaster.ca</a></p>
+            </div>
           </div>
         </div>
+        <div class="col-md-1"></div>
 
         <!-- Right Side: Biography -->
-        <div class="col-md-8">
-          <h3>Biography</h3>
+        <div class="col-md-7">
           <p>
-            Fei Chiang is an Associate Professor in the Department of Computing and Software (Faculty of Engineering),
-            the Director of the Data Science Research Group, and a Faculty Fellow at the IBM Centre for Advanced
+            Fei Chiang is an Associate Professor in the <a href="https://www.eng.mcmaster.ca/cas"
+              target="_blank">Department of Computing and Software</a> (<a href="https://www.eng.mcmaster.ca/"
+              target="_blank">Faculty of Engineering</a>),
+            the Director of the <a href="https://datasci.cas.mcmaster.ca/" target="_blank">Data Science Research
+              Group</a>, and a Faculty Fellow at the IBM Centre for Advanced
             Studies. She served as an inaugural Associate Director of the MacData Institute.
             She holds four patents for her work in self-managing database systems. She has received an
             Ontario Early Researcher Award (2018), and VLDB Distinguished Reviewer Award (2023). She received her M.
@@ -166,6 +215,14 @@
             <li>Temporal graphs</li>
             <li>Database systems</li>
           </ul>
+
+          <h5>Recent News</h5>
+          <ul>
+            <li>First Recent News</li>
+            <li>Second Recent News</li>
+            <li>Third Recent News</li>
+          </ul>
+
         </div>
       </div>
     </div>
@@ -175,27 +232,99 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2>Project</h2>
+          <h2 class="section-title">Project</h2>
         </div>
-        <div class="col-md-8">
-          <!-- Research Group -->
-          <!-- <h4>My research group</h4>
-          <a href="http://db.cas.mcmaster.ca/" target="_blank">
-            <img src="dsl.jpg" alt="Data Science Lab Logo" class="img-fluid mb-3" style="max-width: 250px;">
-          </a> -->
-
-
-
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
           <!-- Current Projects -->
-          <h5>Current Projects</h5>
-          <ul>
-            <li>Data integrity over graphs</li>
-            <li>CurrentClean: Spatio-temporal of stale data</li>
-            <li>Privacy-aware data cleaning</li>
-            <li>A data system for blood monitoring</li>
-          </ul>
+          <h3>Current Projects</h3>
+          <br>
+          <div class="project-item">
+            <img src="project_imgs/data_intergerity.png" alt="Graph Icon" class="icon">
+            <div class="content">
+              <h4>Data Integrity Over Graphs</h4>
+              <p>Data dependencies play a fundamental role in preserving and enforcing data integrity. In relational
+                data,
+                integrity constraints such as functional dependencies capture attribute relationships based on syntactic
+                equivalence. In this project, we explore new classes of data dependencies over graphs, possessing
+                topological and syntactic constraints. We go beyond just equality relationships and study a new class of
+                dependencies called Ontology Functional Dependencies (OFDs) that capture attribute relationships based
+                on
+                synonym and hierarchical (is-a) relationships defined in an ontology. We also study new dependencies
+                over
+                temporal graphs, called Temporal Graph Functional Dependencies (TGFDs), to capture topological and
+                attribute constraints that persist over time.</p>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <img src="project_imgs/data_intergerity.png" alt="Graph Icon" class="icon">
+            <div class="content">
+              <h4>CurrentClean: Spatio-temporal of stale data</h4>
+              <p>Given the proliferation of sensitive user information, data privacy concerns have largely remained
+                unexplored in data cleaning techniques. We explore a new privacy-aware data cleaning framework that
+                aims to resolve data inconsistencies while protecting the sensitive information. We investigate an
+                information exchange model that allows two parties A and B to work together to clean the data from A
+                while disclosing minimal information from B. We propose a set of new repair operations that increase
+                data utility while preserving data privacy. In a sister project, we consider an extended set of repair
+                operations that provide more fine-grained choices on how to clean the data. This allows the user with
+                options of how to improve data utility (i.e., cleanliness) while carefully controlling the level of
+                information disclosure from sensitive data values.</p>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <img src="project_imgs/privacy_aware.png" alt="Graph Icon" class="icon">
+            <div class="content">
+              <h4>Privacy-Aware Data Cleaning</h4>
+              <p>Given the proliferation of sensitive user information, data privacy concerns have largely remained
+                unexplored in data cleaning techniques. We explore a new privacy-aware data cleaning framework that
+                aims to resolve data inconsistencies while protecting the sensitive information. We investigate an
+                information exchange model that allows two parties A and B to work together to clean the data from A
+                while disclosing minimal information from B. We propose a set of new repair operations that increase
+                data utility while preserving data privacy. In a sister project, we consider an extended set of repair
+                operations that provide more fine-grained choices on how to clean the data. This allows the user with
+                options of how to improve data utility (i.e., cleanliness) while carefully controlling the level of
+                information disclosure from sensitive data values.</p>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <img src="project_imgs/data_system_for_blood_monitoring.png" alt="Graph Icon" class="icon">
+            <div class="content">
+              <h4>A Data System for Blood Monitoring</h4>
+              <p>According to the 2020 Auditor General Report on Blood Management and Safety, hospitals are using a
+                variety of information systems to monitor blood inventory, usage, and patient clinical data. This
+                heterogeneity has led to disparate, and disjoint systems hindering data sharing among hospitals,
+                Canadian
+                Blood Services (CBS), and government. Furthermore, these localized views and limited data exchange pose
+                challenges to meet current and predicted demand across hospitals, and to ensure that usage of blood
+                components and products adhere to provincial guidelines. Greater transparency is needed to understand
+                the
+                safety issues and determinate factors around blood usage. In this project, we develop a data system to
+                understand how blood components and products are used to treat specific conditions, follow-on prognosis,
+                and clinical outcomes with respect to patient demographics.</p>
+            </div>
+          </div>
+
+          <div class="project-item">
+            <img src="project_imgs/data_intergerity.png" alt="Graph Icon" class="icon">
+            <div class="content">
+              <h4>The 5th current project</h4>
+              <p>Given the proliferation of sensitive user information, data privacy concerns have largely remained
+                unexplored in data cleaning techniques. We explore a new privacy-aware data cleaning framework that
+                aims to resolve data inconsistencies while protecting the sensitive information. We investigate an
+                information exchange model that allows two parties A and B to work together to clean the data from A
+                while disclosing minimal information from B. We propose a set of new repair operations that increase
+                data utility while preserving data privacy. In a sister project, we consider an extended set of repair
+                operations that provide more fine-grained choices on how to clean the data. This allows the user with
+                options of how to improve data utility (i.e., cleanliness) while carefully controlling the level of
+                information disclosure from sensitive data values.</p>
+            </div>
+          </div>
+
           <!-- Past Projects -->
-          <h5>Past Projects</h5>
+          <h5><a target="_blank" href="pastprojects.html">Past Projects</a></h5>
           <ul>
             <li>Contextual data cleaning and ontological dependencies</li>
             <li>Data-driven multimodal positioning and tracking in indoor environments</li>
@@ -210,7 +339,6 @@
             </li>
           </ul>
 
-          Articles and Videos
           <h5>Some articles/video of our work:</h5>
           <ul>
             <li><a href="https://www.youtube.com/watch?time_continue=1&v=mYFcoydw4n8" target="_blank">Researcher profile
@@ -234,13 +362,22 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2>Selected Publications</h2>
+          <h2 class="section-title">Selected Publications</h2>
         </div>
-        <div class="col-md-8">
-          <ol>
-            <li>
-              Morteza Alipourlangouri, Fei Chiang: Mining Keys for Graphs. Data Knowl. Eng. 150: 102274 (2024)
-            </li>
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+          <h3>
+            2024
+          </h3>
+          <ul>
+            <li> Morteza Alipourlangouri, Fei Chiang: <a target="_blank"
+                href="papers/1-s2.0-S0169023X23001349-main.pdf">Mining Keys for Graphs. Data Knowl.</a> Eng. 150: 102274
+              (2024)</li>
+          </ul>
+          <h3>
+            2023
+          </h3>
+          <ul>
             <li>
               Jongjun Park, Fei Chiang, Eduardo Correia Da Silva, Kevin Lytwyn, Stephen Veldhuis: Will my Flight be on
               Time? Learning from Part Failures to Predict Future Reliability. IEEE Big Data 2023: 1803-1813
@@ -249,6 +386,11 @@
               M. Alipour Langouri, A. Mansfield, F. Chiang, Y. Wu. “Inconsistency Detection with Temporal Graph
               Functional Dependencies”. In ICDE 2023.
             </li>
+          </ul>
+          <h3>
+            2023
+          </h3>
+          <ul>
             <li>
               S. Manzuri Shalmani, F. Chiang, R. Zheng. “Efficient Action Recognition Using Confidence Distillation”. In
               International Conference on Pattern Recognition (ICPR), 2022.
@@ -262,6 +404,11 @@
             <li>
               Y. Sun, Z. Zheng, S. Song, F. Chiang. "Confidence Bounded Replica Currency Estimation". In SIGMOD 2022.
             </li>
+          </ul>
+          <h3>
+            2021
+          </h3>
+          <ul>
             <li>
               M. Milani, Y. Huang, F. Chiang. "Data Anonymization with Diversity Constraints". In TKDE, 2021.
             </li>
@@ -280,10 +427,20 @@
             <li>
               M. Milani, Y. Huang, F. Chiang. Preserving Diversity in Anonymized Data. EDBT 2021, pp. 511-516.
             </li>
+          </ul>
+          <h3>
+            2020
+          </h3>
+          <ul>
             <li>
               Y. Huang, M. Milani, F. Chiang. Privacy-aware data cleaning as a service. Information Systems 92: 101608,
               2020.
             </li>
+          </ul>
+          <h3>
+            2019
+          </h3>
+          <ul>
             <li>
               Z. Zheng, T. Quach, Z. Jin, M. Milani, F. Chiang. CurrentClean: Interactive Change Exploration and
               Cleaning of Stale Data. In CIKM'19, demo paper, pp. 2917-2920.
@@ -296,6 +453,11 @@
               M. Milani, Z. Zheng, F. Chiang. CurrentClean: Spatio-temporal Cleaning of Stale Data In ICDE 2019, pp.
               172-183.
             </li>
+          </ul>
+          <h3>
+            2018
+          </h3>
+          <ul>
             <li>
               Y. Huang, M. Milani, F. Chiang. PACAS: Privacy-Aware, Data Cleaning-as-a-Service. IEEE International
               Conference on Big Data 2018, pp. 1023-2030.
@@ -305,7 +467,8 @@
               Large-Scale Time Dependent Graphs, 2018.
             </li>
             <li>
-              M. Langouri, Z. Zheng, F. Chiang, L. Golab, J. Szlichta. Contextual Data Cleaning. In ICDE workshop on
+              M. Langouri, Z. Zheng, Z. Qu, I. Currie, F. Chiang, L. Golab, J. Szlichta. Contextual Data Cleaning. In
+              ICDE workshop on
               Context in Analytics, 2018.
             </li>
             <li>
@@ -316,6 +479,11 @@
               Z. Zheng, M. Alipour Langouri, Z. Qu, I. Currie, F. Chiang, L. Golab, J. Szlichta. FastOFD: Contextual
               Data Cleaning with Ontology Functional Dependencies. In EDBT 2018, pp. 694-697. (demo track).
             </li>
+          </ul>
+          <h3>
+            2017
+          </h3>
+          <ul>
             <li>
               F. Rahimi Asl, F. Chiang, W. He, R. Samavi. Privacy Aware Web Services with Data Obfuscation. In Workshop
               on Security and Privacy in the Cloud 2017, pp. 458-466.
@@ -324,7 +492,7 @@
               S. Baskaran, A. Keller, F. Chiang, L. Golab, J. Szlichta. Efficient Discovery of Ontology Functional
               Dependencies. In CIKM 2017, pp. 1847-1856.
             </li>
-          </ol>
+          </ul>
         </div>
       </div>
     </div>
@@ -334,70 +502,90 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2>Supervision</h2>
+          <h2 class="section-title">Students</h2>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
           <h3><a href="https://datasci.cas.mcmaster.ca/?page_id=5">Current Students</a></h3>
           <ul>
-            <li>Jongjun Park</li>
-            <li>Zikai Dou</li>
-            <li>Nishttha Sharma</li>
-            <li>Wongyu Kim</li>
-            <li>Satya Bhandari</li>
-            <li>Yaxuan Chen</li>
-            <li>Ziqi Guo</li>
-
+            <li>Jongjun Park: <a>Student Website</a></li>
+            <li>Zikai Dou: <a>Student Website</a></li>
+            <li>Nishttha Sharma: <a>Student Website</a></li>
+            <li>Wongyu Kim: <a>Student Website</a></li>
+            <li>Satya Bhandari: <a>Student Website</a></li>
+            <li>Yaxuan Chen: <a>Student Website</a></li>
+            <li>Ziqi Guo: <a href="https://github.com/G-Jaqen">Student Website</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="teaching" class="section bg-light py-5">
+  <div id="teaching" class="section bg-white py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2>Teaching</h2>
+          <h2 class="section-title">Teaching</h2>
         </div>
-        <div class="col-md-8">
-          <h3><a href="https://datasci.cas.mcmaster.ca/?page_id=5">Current Students</a></h3>
-
-          <!-- Teaching Section -->
-          <h4>Teaching</h4>
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
           <ul>
-            <li>Fall 2022
-              <ul>
-                <li>SFWRENG 3DB3 Databases: see Avenue course page</li>
-                <li>CAS 764 Advanced Topics in Data Management: see Avenue course page</li>
-              </ul>
-            </li>
+            <li>SFWRENG 3DB3 Databases: see Avenue course page</li>
+            <li>CAS 764 Advanced Topics in Data Management: see Avenue course page</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="service" class="section bg-white py-5">
+  <div id="service" class="section bg-light py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2>Service</h2>
+          <h2 class="section-title">Service</h2>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
           <ul>
             <li>Editorial Board: ICDE 2025 Associate Editor, IEEE TKDE, ACM JDIQ</li>
             <li>NSERC EG 1507 Member, 2024-2027</li>
             <li>Finance Co-Chair VLDB 2023 Vancouver, BC, Canada</li>
           </ul>
 
-          <h4>Recent Program Committees</h4>
+
           <ul>
-            <li>PVLDB Review Board 2024, 2023, 2022, 2020, 2019</li>
-            <li>ACM SIGMOD 2025, 2022, 2021 (demo track, demo awards 2020)</li>
-            <li>ICDE 2023, 2022, 2021, 2020, 2019</li>
-            <li>EDBT 2026, 2025, 2024, 2023</li>
-            <li>ACM CIKM 2024, 2023, 2022, 2021, 2020, 2019</li>
-            <li>ACM DEBS 2020</li>
+            <li style="font-size: 115%">Recent Program Committees</li>
+            <ul>
+              <li>PVLDB Review Board 2024, 2023, 2022, 2020, 2019</li>
+              <li>ACM SIGMOD 2025, 2022, 2021 (demo track, demo awards 2020)</li>
+              <li>ICDE 2023, 2022, 2021, 2020, 2019</li>
+              <li>EDBT 2026, 2025, 2024, 2023</li>
+              <li>ACM CIKM 2024, 2023, 2022, 2021, 2020, 2019</li>
+              <li>ACM DEBS 2020</li>
+            </ul>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="news" class="section bg-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="section-title">Media</h2>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+          <h3>Recent Posts</h3>
+          <ul>
+            <li>Recent post</li>
+            <li>Recent post</li>
+            <li>Recent post</li>
+            <li>Recent post</li>
+            <li>Recent post</li>
+            <li>Recent post</li>
           </ul>
         </div>
       </div>
@@ -424,7 +612,7 @@
     }, {
       root: null,
       rootMargin: '0px',
-      threshold: 0.7
+      threshold: 0.4
     });
 
     document.querySelectorAll('.section').forEach(section => {
@@ -433,7 +621,7 @@
 
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', function (e) {
-        e.preventDefault(); // 阻止默认跳转行为
+        e.preventDefault();
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         const navbarHeight = document.querySelector('.navbar').offsetHeight;
