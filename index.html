@@ -63,7 +63,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Dynamic loading of sections
     const sections = [
       { id: "home-container", file: "home.html" },
       { id: "research-container", file: "research.html" },
@@ -74,53 +73,53 @@
       { id: "media-container", file: "media.html" },
     ];
 
-    sections.forEach(section => {
+    Promise.all(sections.map(section =>
       fetch(section.file)
         .then(response => response.text())
         .then(html => {
-          document.getElementById(section.id).innerHTML = html;
+          const container = document.getElementById(section.id);
+          container.innerHTML = html;
+          return container.querySelector('.section');
         })
-        .catch(err => console.error(`Failed to load ${section.file}:`, err));
-    });
+    )).then(loadedSections => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.4
+      };
 
-    // Intersection Observer for Navbar Highlight
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const id = entry.target.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const id = entry.target.id;
+          const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
 
-        if (entry.isIntersecting) {
-          document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-            link.style.color = '';
-          });
-          navLink.classList.add('active');
-          navLink.style.color = '#3498db';
-        }
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('active');
+            });
+            navLink.classList.add('active');
+          }
+        });
+      }, observerOptions);
+
+      loadedSections.forEach(section => {
+        if (section) observer.observe(section);
       });
-    }, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.4
-    });
 
-    document.querySelectorAll('.section').forEach(section => {
-      observer.observe(section);
-    });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-
-        window.scrollTo({
-          top: targetElement.offsetTop - navbarHeight,
-          behavior: 'smooth'
+          window.scrollTo({
+            top: targetElement.offsetTop - navbarHeight,
+            behavior: 'smooth'
+          });
         });
       });
-    });
+    }).catch(err => console.error('加载失败:', err));
   </script>
 </body>
 

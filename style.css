@@ -20,8 +20,6 @@ body {
     font-size: 20px;
 }
 
-
-
 .navbar-brand {
     color: #FFFFFF !important;
     font-weight: bold;
@@ -62,8 +60,10 @@ a:hover {
 }
 
 .nav-link.active {
-    color: #FFFFFF !important;
+    color: #3498db !important;
     font-weight: bold;
+    border-bottom: 3px solid #3498db;
+    transition: all 0.3s ease;
 }
 
 .section-title {
@@ -110,18 +110,13 @@ a:hover {
 .icon-link {
     display: flex;
     justify-content: center;
-    /* 图标水平居中 */
     align-items: center;
-    /* 图标垂直居中 */
 }
 
 .icon-link img {
     max-width: 60px;
-    /* 图标大小 */
     height: auto;
-    /* 保持比例 */
     cursor: pointer;
-    /* 鼠标悬停时显示手型 */
 }
 
 .col-md-10 {
@@ -132,5 +127,4 @@ a:hover {
 .row {
     display: flex;
     align-items: flex-start;
-    /* 确保内容顶部对齐 */
 }
