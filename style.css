@@ -4,30 +4,6 @@ body {
     font-size: 110%;
 }
 
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background-color: #000080;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    font-size: 20px;
-}
-
-.nav-link {
-    color: #FFFFFF !important;
-    font-size: 20px;
-}
-
-.navbar-brand {
-    color: #FFFFFF !important;
-    font-weight: bold;
-    font-size: 32px;
-    text-align: center;
-    margin: 0 auto;
-}
-
 .left-items {
     display: flex;
     justify-content: flex-start;
@@ -43,11 +19,43 @@ body {
     width: 50%;
 }
 
+.col-md-10 {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+    background-color: #000080;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    padding: 20px;
+    font-size: 20px;
+}
+
+.navbar-brand {
+    color: #FFFFFF !important;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .navbar-nav {
     display: flex;
     justify-content: center;
     width: 100%;
 }
+
+
+
 
 a {
     color: cornflowerblue;
@@ -59,11 +67,27 @@ a:hover {
     text-decoration: none;
 }
 
+.nav-link {
+    color: #FFFFFF !important;
+    font-size: 20px;
+}
+
 .nav-link.active {
     color: #3498db !important;
     font-weight: bold;
     border-bottom: 3px solid #3498db;
     transition: all 0.3s ease;
+}
+
+/* 修改导航链接样式 */
+.nav-link {
+    color: #FFFFFF !important;
+    font-size: 20px;
+    /* 保持字体大小不变 */
+    position: relative;
+    /* 为下划线定位做准备 */
+    transition: color 0.3s ease-in-out;
+    /* 颜色过渡效果 */
 }
 
 .section-title {
@@ -117,14 +141,4 @@ a:hover {
     max-width: 60px;
     height: auto;
     cursor: pointer;
-}
-
-.col-md-10 {
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    display: flex;
-    align-items: flex-start;
 }
